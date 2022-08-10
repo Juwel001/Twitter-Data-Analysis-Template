@@ -21,16 +21,17 @@ class Clean_Tweets:
         drop duplicate rows
         """
         
-        ---
+        df.drop(duplicate)
         
         return df
     def convert_to_datetime(self, df:pd.DataFrame)->pd.DataFrame:
         """
         convert column to datetime
         """
-        ----
+       
+        df['created_at']=pd.to_datetime(df['created_at']).dt.date
         
-        ----
+        
         
         df = df[df['created_at'] >= '2020-12-31' ]
         
